@@ -81,8 +81,8 @@ namespace ConsoleApp4
 
         public bool Show()
         {
-            Console.Write("计算器\n请输入一个整数/字符：");
-            string getStr="\0";
+            Console.Write("计算器\n请输入整数or字符：");
+            string getStr = "\0";
             try
             {
                 getStr = Console.ReadLine();
@@ -110,7 +110,6 @@ namespace ConsoleApp4
             catch
             {
                 Console.WriteLine("输入非法");
-                //Console.ReadLine();
                 return false;
             }
             Console.Write("请输入{0}：", (isStr ? "字符" : "整数"));
@@ -130,14 +129,14 @@ namespace ConsoleApp4
                 Console.WriteLine("结果是：{0}", Connect());
             else
                 Console.WriteLine("结果是：{0}", Calculator());
-            
+
             return true;
         }
 
         private string Connect()
         {
             string temp = Str1;
-            switch(Operator)
+            switch (Operator)
             {
                 case '+': return Str1 + Str2;
                 case '-': return temp.Replace(Str2, "");
